@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\MasulController;
 use App\Http\Controllers\API\ArizaController;
+use App\Http\Controllers\API\StatisticsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,6 @@ Route::middleware('auth:sanctum')->group(function () {
     // Arizalarni ko‘rish (har bir foydalanuvchi o'zi yuborgan ariza uchun)
     Route::get('arizalar/my', [ArizaController::class, 'myApplications']);
 });
+
+// routes/web.php yoki api.php (agar bu API bo‘lsa)
+Route::get('statistics', [StatisticsController::class, 'index']);
